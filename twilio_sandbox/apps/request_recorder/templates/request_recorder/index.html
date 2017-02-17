@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>request index</h1>
+    <ul>
+        {% for r in records %}
+            <li><span>{{ r.recorded_time }}</span>: {{ r.message }}</li>
+        {% empty %}
+            <li><p>No records!</p></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
