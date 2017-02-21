@@ -3,6 +3,12 @@ from crispy_forms.layout import Button, Submit
 from django import forms
 from django.utils.translation import ugettext as _
 
+# /usr/bin/env python
+# Download the twilio-python library from http://twilio.com/docs/libraries
+from twilio.rest import TwilioRestClient
+from django.conf import settings
+from twilio_config import twilio_config
+
 
 class SendSmsForm(forms.Form):
     phone_number = forms.CharField(label=_('Phone Number'), required=True)
@@ -17,3 +23,15 @@ class SendSmsForm(forms.Form):
         h.add_input(Submit('submit', _('Send')))
 
         self.helper = h
+
+    def send_sms(self):
+        data = self.cleaned_data
+        phone_number = data['phone_number']
+        body = data['message']
+
+        client = TwilioRestClient(twilio_config['account'], twilio_config['token'])
+        sms_message = client.messages.create(to=phone_number, from_=twilio_config['phone_number'],
+                                             body=body)
+
+        print(sms_message)
+
