@@ -12,7 +12,6 @@ class IncomingRequest(models.Model):
         verbose_name = _('request')
         verbose_name_plural = _('requests')
         ordering = ('-recorded_time',)
-        default_permissions = ()
 
     def set_message(self, request):
         self.message = str(request)

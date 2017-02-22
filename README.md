@@ -8,7 +8,7 @@
 * Twilio >= 3.3.6
 
 # Config
-```
+```python
 # BASE_DIR/twilio_config.py
 twilio_config = {
     'account': '',

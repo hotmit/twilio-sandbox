@@ -3,3 +3,5 @@
 
 db.sqlite3
 twilio_config.py
+migrations
+__pycache__

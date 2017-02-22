@@ -1,9 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 from twilio_sandbox.apps.request_recorder.views import view_record_request, view_records
 from twilio_sandbox.apps.twilio.views import view_twilio_sandbox, view_send_sms
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'twilio_sandbox.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -15,4 +15,4 @@ urlpatterns = patterns('',
     url(r'^record/$', view_record_request, name='record_request'),
     url(r'^records/$', view_records, name='view_records'),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
