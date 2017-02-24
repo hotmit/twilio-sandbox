@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>request index</h1>
-    <ul>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Data</th>
+        </tr>
         {% for r in records %}
-            <li><span>{{ r.recorded_time }}</span>: {{ r.message }}</li>
+            <tr>
+                <td>{{ r.recorded_time }}</td>
+                <td>{{ r.message|safe }}</td>
+            </tr>
         {% empty %}
-            <li><p>No records!</p></li>
+            <tr>
+                <td colspan="2">
+                    No records!
+                </td>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}

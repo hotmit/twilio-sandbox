@@ -1,0 +1,21 @@
+{% if GET %}
+    <h3>GET</h3>
+    <ul>
+        {% for k, v in GET.items %}
+            <li>
+                <strong>{{ k }}</strong>: {{ v }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if POST %}
+    <h3>POST</h3>
+    <ul>
+        {% for k, v in POST.items %}
+            <li>
+                <strong>{{ k }}</strong>: {{ v }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

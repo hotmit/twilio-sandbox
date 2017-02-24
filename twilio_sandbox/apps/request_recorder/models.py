@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.loader import render_to_string
 from django.utils.translation import ugettext as _
 
 
@@ -14,4 +15,12 @@ class IncomingRequest(models.Model):
         ordering = ('-recorded_time',)
 
     def set_message(self, request):
-        self.message = str(request)
+        get_var = dict(request.GET)
+        post_var = dict(request.POST)
+
+        context = {
+            'GET': get_var,
+            'POST': post_var,
+        }
+
+        self.message = render_to_string('request_recorder/message.html', context=context)

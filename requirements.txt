@@ -4,4 +4,4 @@ httplib2==0.10.3
 PySocks==1.6.6
 pytz==2016.10
 six==1.10.0
-twilio==5.7.0
+twilio==6.0.0rc2
