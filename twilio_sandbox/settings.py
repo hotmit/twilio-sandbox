@@ -22,13 +22,16 @@ SECRET_KEY = 'dgk-i#&5a4$m@0j!9jz&tf0&j%-669o5afx9urv)bp1o^&&bdz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.wadep.com',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+    # 'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
