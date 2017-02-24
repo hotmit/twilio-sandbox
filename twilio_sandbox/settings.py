@@ -22,8 +22,6 @@ SECRET_KEY = 'dgk-i#&5a4$m@0j!9jz&tf0&j%-669o5afx9urv)bp1o^&&bdz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
