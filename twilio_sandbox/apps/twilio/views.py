@@ -52,7 +52,8 @@ def view_twilio_xml(request):
     voice = request.GET.get('voice', 'alice')
 
     r = twiml.Response()
-    r.say(message, language=lang, voice=voice)
+    #language=lang,
+    r.say(message, voice=voice)
     r.hangup()
 
     return HttpResponse(str(r), content_type='text/xml; charset=utf-8')
