@@ -6,9 +6,7 @@ from twilio_sandbox.apps.request_recorder.models import IncomingRequest
 
 
 def view_record_request(request):
-    req = IncomingRequest()
-    req.set_message(request)
-    req.save()
+    IncomingRequest.record_message('Request Recorder', request)
     return HttpResponse('Thanks bud!')
 
 
