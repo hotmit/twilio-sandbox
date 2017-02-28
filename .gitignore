@@ -1,6 +1,6 @@
 .idea
-static
-media
+/static/
+/media/
 
 db.sqlite3
 twilio_config.py
