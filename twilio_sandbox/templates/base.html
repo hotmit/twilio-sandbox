@@ -10,8 +10,8 @@
 </head>
 <body>
     <a class="btn btn-primary" href="/">Home</a>
-    <a class="btn btn-primary" href="/records/">View Requests</a>
-    <a class="btn btn-primary" href="/xml/" target="_blank">XML</a>
+    <a class="btn btn-primary" href="{% url 'view_records' %}">View Requests</a>
+    <a class="btn btn-primary" href="{% url 'twilio_outgoing_voice' %}" target="_blank">XML</a>
     <hr/>
 
     {% block body %}

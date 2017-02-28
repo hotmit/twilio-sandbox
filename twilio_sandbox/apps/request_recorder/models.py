@@ -18,12 +18,15 @@ class IncomingRequest(models.Model):
     @classmethod
     def record_message(cls, origin, request):
         if request.GET or request.POST:
-            get_var = dict(request.GET)
-            post_var = dict(request.POST)
+            get_var = request.GET.dict()
+            post_var = request.POST.dict()
 
             context = {
-                'GET': get_var,
-                'POST': post_var,
+                'data': {
+                    'GET': get_var,
+                    'POST': post_var,
+                    'META': request.META,
+                },
             }
 
             message = render_to_string('request_recorder/message.html', context=context)

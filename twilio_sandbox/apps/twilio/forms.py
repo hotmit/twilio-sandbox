@@ -10,6 +10,7 @@ from twilio_config import twilio_config
 # /usr/bin/env python
 # Download the twilio-python library from http://twilio.com/docs/libraries
 
+
 LANG_CHOICES = (('en', _('English')), ('fr', _('Français')))
 VOICE_CHOICES = (('man', _('Man')), ('woman', _('Woman')), ('alice', _('Alice')))
 TYPE_CHOICES = (('sms', _('SMS')), ('voice', _('Voice')))
@@ -57,7 +58,7 @@ class SendSmsVoiceForm(forms.Form):
                 url=self.request.build_absolute_uri(reverse('twilio_outgoing_voice')),
                 params=parse.urlencode(url_param)
             )
-            voice_result = client.calls.create(to=phone_number, from_=from_number, url=url)
+            voice_result = client.calls.create(to=phone_number, from_=from_number, url=url, timeout=30)
             return 'Voice sent!'
 
 
